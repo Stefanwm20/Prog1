@@ -5,6 +5,8 @@
  */
 package wagner_wendt__aufgabenblatt3;
 
+import javax.swing.JOptionPane;
+
 /**
  * This is a testing class for the class Tamagotchi.
  * 
@@ -105,8 +107,16 @@ public class TestTamagotchi {
 
 		boolean allTestsPassed = true;
 		TestTamagotchi testTamagotchi = new TestTamagotchi();
-		System.out.println(testTamagotchi.testGetScore());
-		// timePasses()
+		Tamagotchi tamagotchiPlayer = new Tamagotchi();
+		String input1; 
+		do {
+			
+			String input = JOptionPane.showInputDialog(null, "Command");
+
+			tamagotchiPlayer.handleCommand(input);
+			input1 =JOptionPane.showInputDialog(null, "Keep playing?");
+		} while (input1.equals("Y"));
+
 		if (!testTamagotchi.testTimePasses()) {
 			System.out.println("Testing timePassed(): failed");
 			allTestsPassed = false;

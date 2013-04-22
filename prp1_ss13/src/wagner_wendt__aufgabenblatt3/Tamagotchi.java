@@ -46,20 +46,20 @@ public class Tamagotchi {
 		// TODO Auto-generated method stub
 		boredness++;
 		hunger = 0;
-	
+
 	}
 
 	public void sleep() {
 		// TODO Auto-generated method stub
 		boredness = 0;
 		hunger++;
-		tiredness= 0;
+		tiredness = 0;
 	}
 
 	public void play() {
 		// TODO Auto-generated method stub
-		boredness= 0;
-		hunger ++;
+		boredness = 0;
+		hunger++;
 		tiredness++;
 	}
 
@@ -67,6 +67,7 @@ public class Tamagotchi {
 		int score = 0;
 		if (getHunger() >= 4) {
 
+			System.out.println("Im Hungry");
 			score -= 2;
 
 		}
@@ -93,26 +94,36 @@ public class Tamagotchi {
 			score += 1;
 		}
 		return score;
-	
 
 	}
 
-	public void handleCommand(String command){
-		switch (command){
+	public void handleCommand(String command) {
+		switch (command) {
 		case "eat":
 			eat();
 			timePasses();
+			System.out.println("Current Score" + getScore());
 			System.out.println("Fun!");
 			break;
 		case "sleep":
 			sleep();
 			timePasses();
+			System.out.println("Current Score" + getScore());
+
 			break;
 		case "play":
 			play();
 			timePasses();
+			System.out.println("Current Score" + getScore());
+
+		case "nothing":
+			timePasses();
+			System.out.println("Current Score" + getScore());
+			break;
+		case "exit":
+			System.out.println("Goodbye!");
 		}
-		
+
 	}
-	
+
 }

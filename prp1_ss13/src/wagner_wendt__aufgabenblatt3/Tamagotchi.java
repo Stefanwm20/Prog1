@@ -54,7 +54,6 @@ public class Tamagotchi {
 		boredness = 0;
 		hunger++;
 		tiredness = 0;
-		
 	}
 
 	public void play() {
@@ -70,7 +69,7 @@ public class Tamagotchi {
 
 			System.out.println("Im Hungry");
 			score -= 2;
-			
+
 		}
 		if (getTiredness() >= 4) {
 
@@ -105,8 +104,6 @@ public class Tamagotchi {
 			timePasses();
 			System.out.println("Current Score" + getScore());
 			System.out.println("Fun!");
-			
-			
 			break;
 		case "sleep":
 			sleep();
